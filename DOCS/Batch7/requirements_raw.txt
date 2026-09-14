@@ -1,0 +1,126 @@
+
+# Authentication and Security
+# Background Tasks and Scheduling
+# Core Dependencies
+# Core FastAPI and ASGI
+# Core RAG and ChromaDB dependencies
+# CrewAI Multi-Agent Orchestration System - Batch 4
+# Data Processing
+# Database and ORM
+# Development and Testing
+# Document processing
+# FastAPI Backend Requirements for HITL Collaboration System
+# File Processing and Preview
+# HTTP Client and External APIs
+# Integration with existing batches
+# Monitoring & Logging
+# Monitoring and Logging
+# Optional Performance
+# Optional: GPU support
+# Search and retrieval
+# Testing & Development
+# Text processing and NLP
+# Utilities
+# Validation and Serialization
+# Vector Database & RAG
+# WebSocket and Real-time
+# faiss-gpu>=1.7.4
+# torch-audio>=2.0.0
+Pillow>=10.0.0
+PyPDF2>=3.0.1
+aiofiles==23.2.1
+aiofiles>=23.2.1
+aioredis>=2.0.1
+alembic==1.13.1
+alembic>=1.12.0
+asyncpg>=0.29.0
+black>=23.0.0
+celery==5.3.4
+celery>=5.3.0
+chromadb>=0.4.0
+chromadb>=0.4.15
+click>=8.1.7
+crewai-tools>=0.12.0
+crewai>=0.70.0
+cryptography>=41.0.0
+embedchain>=0.1.0
+factory-boy>=3.3.0
+faiss-cpu>=1.7.4
+fastapi==0.104.1
+fastapi>=0.104.0
+flake8>=6.0.0
+httpx==0.25.2
+httpx>=0.25.0
+kombu>=5.3.0
+langchain-community>=0.0.10
+langchain-community>=0.0.20
+langchain-openai>=0.1.0
+langchain>=0.0.350
+langchain>=0.1.0
+matplotlib==3.8.2
+mypy>=1.5.0
+nltk==3.8.1
+nltk>=3.8.1
+numpy==1.25.2
+numpy>=1.24.0
+openai==1.3.7
+openpyxl==3.1.2
+openpyxl>=3.1.2
+orjson>=3.9.0
+pandas==2.1.4
+pandas>=2.0.0
+passlib[bcrypt]>=1.7.4
+pdfplumber>=0.9.0
+plotly==5.17.0
+prometheus-client>=0.17.0
+prometheus-client>=0.19.0
+psycopg2-binary==2.9.9
+psycopg2-binary>=2.9.7
+pydantic-settings>=2.1.0
+pydantic==2.5.0
+pydantic>=2.0.0
+pydantic>=2.5.0
+pytest-asyncio==0.21.1
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest==7.4.3
+pytest>=7.4.0
+python-docx==1.1.0
+python-docx>=0.8.11
+python-dotenv>=1.0.0
+python-jose[cryptography]>=3.3.0
+python-magic>=0.4.27
+python-multipart==0.0.6
+python-multipart>=0.0.6
+python-pptx==0.6.23
+python-socketio>=5.10.0
+pyyaml>=6.0
+rank-bm25>=0.2.2
+redis==5.0.1
+redis>=5.0.0
+reportlab==4.0.7
+rich>=13.0.0
+rich>=13.7.0
+scikit-learn>=1.3.0
+seaborn==0.13.0
+sentence-transformers>=2.2.2
+sentry-sdk[fastapi]>=1.38.0
+spacy==3.7.2
+spacy>=3.7.0
+sqlalchemy==2.0.23
+sqlalchemy>=2.0.0
+structlog==23.2.0
+structlog>=23.0.0
+structlog>=23.2.0
+tiktoken>=0.5.0
+torch>=2.0.0
+tqdm>=4.66.0
+transformers==4.36.2
+transformers>=4.35.0
+typer>=0.9.0
+uvicorn[standard]==0.24.0
+uvicorn[standard]>=0.24.0
+uvloop>=0.17.0
+weasyprint==60.2
+websockets==12.0
+websockets>=12.0

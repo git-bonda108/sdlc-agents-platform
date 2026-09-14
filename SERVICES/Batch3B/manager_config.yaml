@@ -1,0 +1,180 @@
+
+# Enhanced SDLC Manager Configuration with RAG Integration
+
+# Abacus AI Configuration
+abacus:
+  api_key: ${ABACUS_API_KEY}
+  deployment_token: ${ABACUS_DEPLOYMENT_TOKEN}
+  deployment_id: ${ABACUS_DEPLOYMENT_ID}
+  base_url: ${ABACUS_BASE_URL}
+  timeout: 300
+  max_retries: 3
+
+# JIRA Integration Configuration
+jira:
+  server: ${JIRA_SERVER}
+  username: ${JIRA_USERNAME}
+  api_token: ${JIRA_API_TOKEN}
+  project_key: ${JIRA_PROJECT_KEY}
+  issue_type: "Task"
+  priority: "Medium"
+  auto_sync: false
+  sync_interval: 3600  # seconds
+
+# Memory Backend Configuration
+memory:
+  backend: "chromadb"  # chromadb, in-memory, redis
+  persist_data: true
+  max_entries: 10000
+  cleanup_interval: 86400  # seconds
+  compression: true
+
+# Audit and Logging Configuration
+audit:
+  enabled: true
+  log_level: "INFO"
+  log_file: "sdlc_audit.log"
+  max_file_size: "100MB"
+  backup_count: 5
+  include_rag_events: true
+  sensitive_data_masking: true
+
+# RAG System Configuration
+rag:
+  enabled: true
+  
+  # ChromaDB Configuration
+  chromadb:
+    persist_directory: ${CHROMA_PERSIST_DIR:-./chroma_db}
+    collection_prefix: "sdlc_"
+    distance_function: "cosine"  # cosine, l2, ip
+    max_collections: 10
+    batch_size: 100
+    
+  # Embedding Configuration
+  embedding:
+    model_name: ${EMBEDDING_MODEL:-all-MiniLM-L6-v2}
+    dimension: 384
+    normalize_embeddings: true
+    batch_size: 32
+    cache_embeddings: true
+    
+  # Document Chunking Configuration
+  chunking:
+    strategy: "semantic"  # fixed, semantic, hybrid
+    chunk_size: 1000
+    chunk_overlap: 200
+    semantic_threshold: 0.7
+    min_chunk_size: 100
+    max_chunk_size: 2000
+    preserve_structure: true
+    
+  # Retrieval Configuration
+  retrieval:
+    top_k: 10
+    similarity_threshold: 0.5
+    rerank_top_k: 5
+    hybrid_alpha: 0.7  # Weight for dense retrieval
+    enable_query_expansion: true
+    query_expansion_terms: 3
+    
+  # Memory Management Configuration
+  memory:
+    max_memory_size: 1000
+    context_window_size: 4000
+    memory_decay_factor: 0.95
+    consolidation_threshold: 100
+    enable_episodic_memory: true
+    
+  # File Processing Configuration
+  file_processing:
+    supported_formats: ["pdf", "docx", "txt", "xlsx", "csv", "md", "html"]
+    max_file_size_mb: 50
+    parallel_processing: true
+    max_workers: 4
+    extract_metadata: true
+    
+  # Search and Ranking Configuration
+  search:
+    enable_semantic_search: true
+    enable_keyword_search: true
+    enable_hybrid_search: true
+    reranking_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    diversity_threshold: 0.8
+    
+  # Performance Configuration
+  performance:
+    cache_size: 1000
+    enable_gpu: false
+    batch_inference: true
+    async_processing: true
+    
+  # Monitoring Configuration
+  monitoring:
+    enable_metrics: true
+    metrics_port: 8001
+    log_queries: true
+    log_results: false  # Set to true for debugging
+    performance_tracking: true
+
+# LLM Configuration
+llm:
+  provider: "routellm"  # routellm, openai, anthropic
+  model: "gpt-4o"
+  temperature: 0.7
+  max_tokens: 4000
+  timeout: 120
+  max_retries: 3
+  
+# Phase Configuration
+phases:
+  requirements:
+    timeout: 1800  # 30 minutes
+    max_iterations: 5
+    approval_required: true
+    rag_enabled: true
+    
+  design:
+    timeout: 2400  # 40 minutes
+    max_iterations: 3
+    approval_required: true
+    rag_enabled: true
+    
+  build:
+    timeout: 3600  # 60 minutes
+    max_iterations: 10
+    approval_required: false
+    rag_enabled: true
+    
+  integration_test:
+    timeout: 2400  # 40 minutes
+    max_iterations: 5
+    approval_required: true
+    rag_enabled: true
+    
+  uat:
+    timeout: 1800  # 30 minutes
+    max_iterations: 3
+    approval_required: true
+    rag_enabled: true
+    
+  cutover:
+    timeout: 1200  # 20 minutes
+    max_iterations: 2
+    approval_required: true
+    rag_enabled: true
+
+# Security Configuration
+security:
+  enable_auth: false
+  api_key_required: false
+  rate_limiting: false
+  max_requests_per_minute: 100
+  data_encryption: false
+  
+# Development Configuration
+development:
+  debug_mode: false
+  verbose_logging: false
+  enable_profiling: false
+  mock_external_services: false
